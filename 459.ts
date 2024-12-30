@@ -1,3 +1,4 @@
+// 暴力 没有做出来
 // function repeatedSubstringPattern(s: string): boolean {
 //   let res: string[] = []
 //   let index = 0
@@ -23,6 +24,7 @@
 //   return true
 // }
 
+// 1. 通过模拟
 // 思路是，如果一个字符串 sn 重复多次是另一个字符串 ln 的子串，那么这个字符串一定是由这个子串重复n次构成的
 
 // 满足一个两个条件：一个是这个长字符串一定是由子串重复n次，也就是说，长字符串的长度一定是子串的整数倍
@@ -53,4 +55,17 @@ function repeatedSubstringPattern(s: string): boolean {
     }
   }
   return false
+}
+
+// 2. 通过异或运算
+function _repeatedSubstringPattern(s: string): boolean {
+  let newStr = s + s
+  return newStr.substring(1, newStr.length - 1).indexOf(s) !== -1
+}
+
+// 3.是否可以通过正则表达式？
+// 可以使用通配符 . 来匹配任意字符
+// 对应 JavaScriptDeadLine -> /tops/topfun-github/JavaScriptDeadline/source/Regex/index.mjs
+function repeatedSubstringPatternByRegex(s: string): string {
+  let regex = /(.{3}){3}/
 }
