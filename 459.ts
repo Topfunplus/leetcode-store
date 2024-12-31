@@ -66,6 +66,8 @@ function _repeatedSubstringPattern(s: string): boolean {
 // 3.是否可以通过正则表达式？
 // 可以使用通配符 . 来匹配任意字符
 // 对应 JavaScriptDeadLine -> /tops/topfun-github/JavaScriptDeadline/source/Regex/index.mjs
-function repeatedSubstringPatternByRegex(s: string): string {
+function repeatedSubstringPatternByRegex(s: string): boolean {
   let regex = /(.{3}){3}/
+
+  return regex.test(s)
 }
